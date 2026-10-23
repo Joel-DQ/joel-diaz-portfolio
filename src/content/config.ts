@@ -1,6 +1,6 @@
 import { defineCollection, z } from "astro:content";
 
-const blog = defineCollection({
+/*const blog = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -8,7 +8,7 @@ const blog = defineCollection({
     date: z.coerce.date(),
     draft: z.boolean().optional()
   }),
-});
+});*/
 
 const work = defineCollection({
   type: "content",
