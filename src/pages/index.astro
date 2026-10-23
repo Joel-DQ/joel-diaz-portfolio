@@ -1,3 +1,4 @@
+
 ---
 import { getCollection } from "astro:content";
 import Container from "@components/Container.astro";
@@ -7,19 +8,17 @@ import Link from "@components/Link.astro";
 import { dateRange } from "@lib/utils";
 import { SITE, HOME, SOCIALS } from "@consts";
 
-const blog = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_POSTS_ON_HOMEPAGE);
-
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0,SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
 const allwork = (await getCollection("work"))
-  .sort((a, b) => new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf())
-  .slice(0,SITE.NUM_WORKS_ON_HOMEPAGE);
+  .sort((a, b) =>
+    new Date(b.data.dateStart).valueOf() -
+    new Date(a.data.dateStart).valueOf()
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
 
 const work = await Promise.all(
   allwork.map(async (item) => {
@@ -27,70 +26,95 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
-
 ---
 
-<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<PageLayout
+  title="Joel Díaz Quinto | QA Engineer & Systems Engineer"
+  description="Portafolio profesional de Joel Díaz Quinto. Proyectos de QA, pruebas funcionales y de API, soporte de TI e ingeniería en sistemas."
+>
   <Container>
-    <h4 class="animate font-semibold text-black dark:text-white">
-      Hi, I'm Nano <span class="text-xl">👋🏻</span> 
-    </h4>
     <div class="space-y-16">
-      <section>
+      <section class="space-y-6">
+        <h4 class="animate font-semibold text-black dark:text-white">
+          Hola, soy Joel Díaz Quinto <span class="text-xl">👋</span>
+        </h4>
+
         <article class="space-y-4">
           <p class="animate">
-            I am a minimal, seo friendly, accessible portfolio and blog for developers. 
-            I am an even more lightweight version of my popular theme
-            <Link href="https://github.com/markhorn-dev/astro-sphere" aria-label="Astro Sphere on Github" external>
-              Astro Sphere
-            </Link>.
-            I have a lighthouse scores of 100 across the board for performance, 
-            accesibility, best practices and SEO.
+            Soy Ingeniero en Sistemas Computacionales con experiencia en
+            soporte de TI, infraestructura tecnológica, redes empresariales,
+            sistemas ERP y solución de incidentes técnicos.
           </p>
+
           <p class="animate">
-            I come packed with full type safety, a sitemap, an rss feed, markdown 
-            and mdx support (use components in your markdown) through astro integrations.
-            I am styled with tailwind and come preconfigured with light, dark and 
-            system/os theme preferences out of the box.
+            Actualmente estoy fortaleciendo mis habilidades en Quality
+            Assurance (QA) mediante mi formación en TripleTen. Me enfoco en
+            pruebas funcionales, diseño de casos de prueba, validación de
+            requisitos, pruebas de API con Postman y documentación de errores.
           </p>
+
           <p class="animate">
-            Visit
-            <Link href="https://github.com/markhorn-dev/astro-nano" aria-label="Astro Nano on Github" external>
-              Astro Nano on Github
-            </Link>
-            to fork the repository, read the docs or one-click deploy on Vercel or Netlify. 
+            En este portafolio encontrarás proyectos prácticos de pruebas
+            de software, mi experiencia profesional y las tecnologías con
+            las que he trabajado.
+          </p>
+        </article>
+
+        <div class="animate flex flex-wrap gap-2">
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            QA Testing
+          </span>
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            Python
+          </span>
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            Pytest
+          </span>
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            Selenium
+          </span>
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            Postman
+          </span>
+          <span class="rounded border border-black/15 px-3 py-1 text-sm dark:border-white/20">
+            SQL
+          </span>
+        </div>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">
+          Sobre mí
+        </h5>
+
+        <article class="space-y-3">
+          <p>
+            Mi experiencia en soporte técnico e infraestructura me ha
+            permitido desarrollar habilidades para analizar problemas,
+            investigar incidentes y mantener sistemas tecnológicos en
+            funcionamiento.
+          </p>
+
+          <p>
+            También tengo experiencia previa en desarrollo de software
+            con React, Java y MySQL. Busco aplicar esta combinación de
+            conocimientos técnicos y pensamiento analítico en oportunidades
+            de QA, pruebas de software y calidad de sistemas.
           </p>
         </article>
       </section>
 
       <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h5 class="font-semibold text-black dark:text-white">
-            Latest posts
-          </h5>
-          <Link href="/blog">
-            See all posts
-          </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {blog.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
+            Experiencia profesional
           </h5>
           <Link href="/work">
-            See all work
+            Ver experiencia
           </Link>
         </div>
-        <ul class="flex flex-col space-y-4">
+
+        <ul class="flex flex-col space-y-6">
           {work.map(entry => (
             <li>
               <div class="text-sm opacity-75">
@@ -111,14 +135,20 @@ const work = await Promise.all(
       </section>
 
       <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
           <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
+            Proyectos de QA
           </h5>
           <Link href="/projects">
-            See all projects
+            Ver todos los proyectos
           </Link>
         </div>
+
+        <p>
+          Proyectos prácticos de pruebas de aplicaciones web y validación
+          de APIs.
+        </p>
+
         <ul class="flex flex-col gap-4">
           {projects.map(project => (
             <li>
@@ -130,25 +160,61 @@ const work = await Promise.all(
 
       <section class="animate space-y-4">
         <h5 class="font-semibold text-black dark:text-white">
-          Let's Connect
+          Tecnologías y herramientas
         </h5>
+
         <article>
           <p>
-            If you want to get in touch with me about something or just to say hi,
-            reach out on social media or send me an email.
+            <strong>Pruebas de software:</strong> pruebas funcionales,
+            diseño de casos de prueba, reporte de errores y pruebas de API.
+          </p>
+          <p>
+            <strong>QA y desarrollo:</strong> Python, Pytest, Selenium,
+            Postman, JavaScript y React.
+          </p>
+          <p>
+            <strong>Bases de datos:</strong> SQL, SQL Server, MySQL y
+            PostgreSQL.
+          </p>
+          <p>
+            <strong>Infraestructura:</strong> redes, soporte de TI,
+            Ubiquiti, sistemas ERP y CONTPAQi.
           </p>
         </article>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">
+          Contacto
+        </h5>
+
+        <article>
+          <p>
+            Estoy interesado en oportunidades relacionadas con QA,
+            pruebas de software, ingeniería en sistemas y soporte de TI.
+            Puedes conocer mis proyectos o contactarme a través de mis
+            redes profesionales.
+          </p>
+        </article>
+
         <ul class="flex flex-wrap gap-2">
           {SOCIALS.map(SOCIAL => (
             <li class="flex gap-x-2 text-nowrap">
-              <Link href={SOCIAL.HREF} external aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}>
+              <Link
+                href={SOCIAL.HREF}
+                external
+                aria-label={`${SITE.NAME} en ${SOCIAL.NAME}`}
+              >
                 {SOCIAL.NAME}
               </Link>
               {"/"}
             </li>
           ))}
           <li class="line-clamp-1">
-            <Link href={`mailto:${SITE.EMAIL}`} aria-label={`Email ${SITE.NAME}`}>
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Correo de ${SITE.NAME}`}
+            >
               {SITE.EMAIL}
             </Link>
           </li>
