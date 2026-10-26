@@ -1,8 +1,8 @@
 
 ---
 title: "API Stand Tests — Validación de API"
-description: "Proyecto de pruebas de API enfocado en validar el parámetro firstName durante la creación de usuarios."
-date: 2026-10-23
+description: "Proyecto de pruebas de API enfocado en validar el parámetro firstName."
+date: 23-10-2026
 repoURL: "https://github.com/Joel-DQ/api_stand_tests"
 ---
 

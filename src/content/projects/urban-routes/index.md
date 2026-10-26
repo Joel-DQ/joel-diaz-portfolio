@@ -1,7 +1,7 @@
 
 ---
 title: "Urban Routes — Pruebas de aplicación web"
-description: "Proyecto de QA enfocado en validar el flujo de reservación de viajes mediante pruebas automatizadas."
+description: "Proyecto de QA enfocado en validar el flujo de reservación de viajes."
 date: 2026-10-23
 repoURL: "https://github.com/Joel-DQ/qa-project-Urban-Routes-es"
 ---

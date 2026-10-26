@@ -9,8 +9,8 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  TITLE: "Joel Díaz Quinto | QA Engineer & Systems Engineer",
+  DESCRIPTION: "Portafolio profesional de Joel Díaz Quinto. Proyectos de QA, pruebas funcionales y de API, soporte de TI e ingeniería en sistemas.",
 };
 
 /*export const BLOG: Metadata = {
@@ -19,13 +19,13 @@ export const HOME: Metadata = {
 };*/
 
 export const WORK: Metadata = {
-  TITLE: "Work",
-  DESCRIPTION: "Where I have worked and what I have done.",
+  TITLE: "Trabajos",
+  DESCRIPTION: "Dónde he trabajado y qué he hecho.",
 };
 
 export const PROJECTS: Metadata = {
-  TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  TITLE: "Proyectos",
+  DESCRIPTION: "Una recopilación de mis proyectos, con enlaces a repositorios y demostraciones.",
 };
 
 export const SOCIALS: Socials = [

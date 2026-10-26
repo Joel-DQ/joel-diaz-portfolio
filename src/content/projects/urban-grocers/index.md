@@ -1,7 +1,7 @@
 
 ---
 title: "Urban Grocers — Pruebas de API"
-description: "Validación de una API para comprobar el comportamiento de solicitudes relacionadas con la creación de kits de productos."
+description: "Validación de una API para comprobar el comportamiento de solicitudes."
 date: 2026-10-23
 repoURL: "https://github.com/Joel-DQ/qa-project-Urban-Grocers-app-es"
 ---
