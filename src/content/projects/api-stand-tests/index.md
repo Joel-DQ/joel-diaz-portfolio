@@ -17,6 +17,15 @@ Validar el comportamiento de una API al recibir solicitudes para crear usuarios,
 - Ejecución de pruebas automatizadas.
 - Revisión de las respuestas de la API.
 
+## Resultados
+
+- Casos de prueba ejecutados: 10.
+- Defectos identificados: 5.
+
+## Defecto destacado
+
+Identifiqué fallas en la validación de los límites y tipos de datos aceptados por la API. Estos comportamientos pueden permitir entradas inválidas y generar inconsistencias en el registro de usuarios.
+
 ## Tecnologías
 
 Python, Pytest y pruebas de API REST.

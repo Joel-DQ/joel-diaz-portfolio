@@ -17,6 +17,15 @@ Validar el comportamiento de una aplicación de reservación de viajes mediante 
 - Comprobación de los datos ingresados y las opciones seleccionadas.
 - Identificación y documentación de resultados inesperados.
 
+## Resultados
+
+- Pruebas automatizadas: 9.
+- Escenarios validados: 9.
+
+## Aporte técnico destacado
+
+Seleccioné localizadores para identificar los elementos de la interfaz y estructurar las pruebas automatizadas de forma que fueran más fáciles de mantener y reutilizar.
+
 ## Tecnologías
 
 Python, Selenium WebDriver y Pytest.
